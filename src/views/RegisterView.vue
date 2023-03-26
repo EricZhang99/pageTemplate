@@ -95,8 +95,16 @@ const options = Array.from({ length: 10000 }).map((_, idx) => ({
 </script>
 
 <style scoped>
+.el-form-item {
+  margin-left: 10%;
+  width: 60%;
+}
 .el-form {
   width: 50vw;
-  margin-left: 25vw;
+  height: 60vh;
+  margin-left: 25%;
+  padding-top: 2%;
+  background-color: aliceblue;
+  border-radius: 16px;
 }
 </style>

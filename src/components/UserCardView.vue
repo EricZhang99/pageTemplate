@@ -1,6 +1,9 @@
 <script setup>
-// showCard = false;
-var showCard = false
+import router from '../router'
+var showCard = true
+function gotoUserPage() {
+  router.push('/user')
+}
 </script>
 
 <template>
@@ -11,34 +14,63 @@ var showCard = false
   >
     <template #reference>
       <el-avatar
-        src="https://picsum.photos/200"
+        src="https://robohash.org/eric"
         :size="100"
         style="max-height: 10vh; max-width: 10vh"
       />
+      <!-- <el-icon style="padding-left: 40vw; padding-right: 40vw"><HomeFilled /></el-icon> -->
     </template>
 
     <template #default>
       <div class="demo-rich-conent" style="display: flex; gap: 16px; flex-direction: column">
         <div class="userInfo" v-if="showCard">
-          <el-avatar
-            :size="60"
-            src="https://picsum.photos/200"
-            style="margin-bottom: 8px; margin-top: 8px"
-          />
-          <div>
-            <p class="demo-rich-content__name" style="margin: 0; font-weight: 500">Element Plus</p>
+          <el-row>
+            <el-avatar
+              :size="60"
+              src="https://robohash.org/eric"
+              style="margin-bottom: 8px; margin-top: 8px"
+            />
             <p
-              class="demo-rich-content__mention"
-              style="margin: 0; font-size: 14px; color: var(--el-color-info)"
+              class="demo-rich-content__name"
+              style="
+                margin: 0;
+                font-weight: 100;
+                font-size: 30px;
+                padding-top: 10px;
+                padding-left: 5px;
+              "
             >
-              @element-plus
+              eric
             </p>
-          </div>
-
-          <p class="demo-rich-content__desc" style="margin: 0">
-            Element Plus, a Vue 3 based component library for developers, designers and product
-            managers
-          </p>
+          </el-row>
+          <el-divider />
+          <el-row>
+            <el-col :span="6">
+              <el-statistic title="作品数量" :value="12" />
+            </el-col>
+            <el-col :span="6">
+              <el-statistic title="好友人数" :value="2" />
+            </el-col>
+            <el-col :span="6">
+              <el-statistic title="关注人数" :value="4" />
+            </el-col>
+          </el-row>
+          <el-divider />
+          <el-row>
+            <p class="demo-rich-content__desc" style="margin: 0; padding-top: 5px">
+              反正火车总得创死一个，那就创死你吧。
+            </p>
+          </el-row>
+          <el-divider />
+          <el-row>
+            <el-button
+              type="primary"
+              style="padding-left: 40%; padding-right: 40%"
+              round
+              @click="gotoUserPage"
+              >前往主页</el-button
+            >
+          </el-row>
         </div>
         <div class="toLaunch" v-else>
           <p>please login or register</p>

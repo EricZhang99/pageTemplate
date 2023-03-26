@@ -38,11 +38,18 @@ const onSubmit = () => {
   width: 20vw;
   max-width: 150px;
   min-width: 30;
+}
+.el-form-item {
+  margin-left: 10%;
   padding-top: 10px;
 }
 .el-form {
   margin: auto;
+  padding-top: 1%;
   text-align: center;
-  width: 30vw;
+  width: 25vw;
+  height: 30vh;
+  background-color: aliceblue;
+  border-radius: 10px;
 }
 </style>
